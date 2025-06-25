@@ -1,16 +1,40 @@
-# Maven Buildkite example
+# Buildkite Maven Example
 
-This example uses [Maven](http://maven.apache.org) to run tests, build a package, and then uploads the package as a [Buildkite artifact](https://buildkite.com/docs/builds/artifacts) using the current stable [Buildkite Agent](https://buildkite.com/docs/agent). You just need `mvn` installed in your `$PATH`.
+[![Build status](https://badge.buildkite.com/aab023f2f33ab06766ed6236bc40caf0df1d9448e4f590d0ee.svg?branch=main)](https://buildkite.com/buildkite/artifact-example)
 
-This example also works on the beta Buildkite Agent using [the Docker Compose plugin](https://github.com/buildkite-plugins/docker-compose-buildkite-plugin) to run Maven in [the Maven Docker container](https://hub.docker.com/_/maven/), which works great on the [Elastic CI Stack for AWS](https://github.com/buildkite/elastic-ci-stack-for-aws).
+This repository is an example of testing and packaging a [Maven](http://maven.apache.org) project using [Buildkite](https://buildkite.com).
+It demonstrates how to run unit tests, build a JAR file, and upload it as a [Buildkite artifact](https://buildkite.com/docs/builds/artifacts).
 
-![Maven package build with tests](https://user-images.githubusercontent.com/14028/30009989-ef3a8868-916f-11e7-9946-3a613a157f53.png)
+👉 **Live pipeline:** [buildkite.com/buildkite/maven--example](https://buildkite.com/buildkite/maven-example)
 
-![Maven uploaded target artifacts](https://user-images.githubusercontent.com/14028/30009990-ef961868-916f-11e7-84b7-3ab90be83f3c.png)
+---
 
-See the full [Getting Started Guide](https://buildkite.com/docs/guides/getting-started) for step-by-step instructions on how to get this running, or simply click the following link to add this project to Buildkite:
+## How it works
 
-[![Add to Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
+This example:
+- Uses Maven to run tests and build a package.
+- Uploads the resulting JAR file as a Buildkite artifact.
+- Runs on either:
+  - A local agent with `mvn` in your `$PATH`, or
+  - A Docker container via [the Docker Compose Buildkite Plugin](https://github.com/buildkite-plugins/docker-compose-buildkite-plugin), useful on the [Elastic CI Stack for AWS](https://github.com/buildkite/elastic-ci-stack-for-aws).
+
+---
+
+## Requirements
+
+- A Buildkite agent
+- Either:
+  - Maven (`mvn`) installed on your agent machine, **or**
+  - Docker + Docker Compose for the container-based setup
+
+---
+
+## To try it yourself
+
+Clone this repo and run the tests locally:
+
+```bash
+mvn test
 
 ## License
 
