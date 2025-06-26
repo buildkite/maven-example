@@ -1,11 +1,19 @@
 # Buildkite Maven Example
 
-[![Build status](https://badge.buildkite.com/aab023f2f33ab06766ed6236bc40caf0df1d9448e4f590d0ee.svg?branch=main)](https://buildkite.com/buildkite/artifact-example)
+[![Build status](https://badge.buildkite.com/a947f64837044296a1ea4394819872e0544a4647a3400e6634.svg)](https://buildkite.com/buildkite/maven-example)
 
 This repository is an example of testing and packaging a [Maven](http://maven.apache.org) project using [Buildkite](https://buildkite.com).
 It demonstrates how to run unit tests, build a JAR file, and upload it as a [Buildkite artifact](https://buildkite.com/docs/builds/artifacts).
 
-👉 **Live pipeline:** [buildkite.com/buildkite/maven--example](https://buildkite.com/buildkite/maven-example)
+👉 **See this example in action:** [buildkite.com/buildkite/maven-example](https://buildkite.com/buildkite/maven-example)
+
+See the full [Getting Started Guide](https://buildkite.com/docs/guides/getting-started) for step-by-step instructions on how to get this running, or try it yourself:
+
+[![Add to Buildkite](https://buildkite.com/button.svg)](https://buildkite.com/new)
+
+<a href="https://buildkite.com/buildkite/maven-example/builds/latest?branch=main">
+  <img width="2400" alt="Screenshot of example pipeline build page" src=".buildkite/screenshot.png" />
+</a>
 
 ---
 
@@ -22,19 +30,22 @@ This example:
 
 ## Requirements
 
-- A Buildkite agent
-- Either:
-  - Maven (`mvn`) installed on your agent machine, **or**
-  - Docker + Docker Compose for the container-based setup
+- A [Buildkite agent](https://buildkite.com/docs/agent)
+- By default, this example uses Docker and Docker Compose.
+  - ✅ You don’t need to install Java or Maven manually.
+- **Optional:** If you prefer not to use Docker, you can run this pipeline on an agent with:
+  - Java (JDK 8+)
+  - [Maven](https://maven.apache.org) (`mvn`) installed and available in your `$PATH`
 
 ---
 
 ## To try it yourself
 
-Clone this repo and run the tests locally:
+Clone the repo and run the tests locally:
 
 ```bash
-mvn test
+docker-compose run maven mvn test
+```
 
 ## License
 
