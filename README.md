@@ -1,6 +1,6 @@
 # Buildkite Maven Example
 
-[![Build status](https://badge.buildkite.com/a947f64837044296a1ea4394819872e0544a4647a3400e6634.svg?branch=update-maven-example)](https://buildkite.com/buildkite/maven-example)
+[![Build status](https://badge.buildkite.com/a947f64837044296a1ea4394819872e0544a4647a3400e6634.svg?branch=main)](https://buildkite.com/buildkite/maven-example)
 [![Add to Buildkite](https://img.shields.io/badge/Add%20to%20Buildkite-14CC80)](https://buildkite.com/new)
 
 This repository is an example of testing and packaging a [Maven](http://maven.apache.org) project using [Buildkite](https://buildkite.com).
@@ -23,20 +23,21 @@ See the full [Getting Started Guide](https://buildkite.com/docs/guides/getting-s
 This example:
 - Uses Maven to run tests and build a package.
 - Uploads the resulting JAR file as a Buildkite artifact.
-- Runs on either:
-  - A local agent with `mvn` in your `$PATH`, or
-  - A Docker container via [the Docker Compose Buildkite Plugin](https://github.com/buildkite-plugins/docker-compose-buildkite-plugin), useful on the [Elastic CI Stack for AWS](https://github.com/buildkite/elastic-ci-stack-for-aws).
+- Runs using:
+  - A Docker container via [the Docker Compose Buildkite Plugin](https://github.com/buildkite-plugins/docker-compose-buildkite-plugin), or
+  - A local agent with `mvn` in your `$PATH`.
+
+It's also designed to work well on the [Elastic CI Stack for AWS](https://github.com/buildkite/elastic-ci-stack-for-aws).
 
 ---
 
 ## Requirements
 
 - A [Buildkite agent](https://buildkite.com/docs/agent)
-- By default, this example uses Docker and Docker Compose.
-  - ✅ You don’t need to install Java or Maven manually.
-- **Optional:** If you prefer not to use Docker, you can run this pipeline on an agent with:
+- ✅ No manual setup — Java and Maven are handled by Docker Compose
+- **Optional:** To run outside Docker, you'll need:
   - Java (JDK 8+)
-  - [Maven](https://maven.apache.org) (`mvn`) installed and available in your `$PATH`
+  - [Maven](https://maven.apache.org) installed and available in your `$PATH`
 
 
 ## License
