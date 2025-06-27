@@ -1,7 +1,6 @@
 steps:
   - label: ":maven: :package:"
     command: mvn package
-    exit 1  # ← this causes the step to fail
     artifact_paths: "target/*.jar"
     plugins:
       - docker-compose#v1.5.2:

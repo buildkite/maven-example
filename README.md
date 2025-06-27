@@ -38,15 +38,6 @@ This example:
   - Java (JDK 8+)
   - [Maven](https://maven.apache.org) (`mvn`) installed and available in your `$PATH`
 
----
-
-## To try it yourself
-
-Clone the repo and run the tests locally:
-
-```bash
-docker-compose run maven mvn test
-```
 
 ## License
 
