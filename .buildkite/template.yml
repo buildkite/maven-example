@@ -1,5 +1,11 @@
 name: "Maven Example"
-description: "An example repository you can use as a test project with Buildkite"
+description: "An example pipeline that builds and tests a Java project using Maven and uploads a JAR artifact."
+emoji: ":maven:"
+color: "#FFF8E7"
+languages:
+  - "Java"
+  - "Maven"
+  - "YAML"
 steps:
-  - command: "buildkite-agent pipeline upload"
-    label: ":pipeline:"
+  - label: ":pipeline:"
+    command: "buildkite-agent pipeline upload"
