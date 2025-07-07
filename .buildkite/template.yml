@@ -4,8 +4,6 @@ emoji: ":maven:"
 color: "#FFF8E7"
 languages:
   - "Java"
-  - "Maven"
-  - "YAML"
 steps:
   - label: ":pipeline:"
     command: "buildkite-agent pipeline upload"
